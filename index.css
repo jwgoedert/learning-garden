@@ -1,24 +1,28 @@
 .image-box {
     /* width: 100%; */
     padding: 15%;
-    text-align: center;
+    text-align: left;
     height: 50vh;
     /* margin-left: 35%; */
 }
 
 .main-logo {
     height: 100vh;
-    margin-left: 35%;
+    width: 54%;
+    /* margin-left: 35%; */
+    position: relative;
+    margin-top: -45px;
 }
 
 p {
     justify-content: center;
-    text-align: center;
+    text-align: left;
     font-size: 32px;
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
+    padding-top: 19%;
 }
 
 #choiceNav {
