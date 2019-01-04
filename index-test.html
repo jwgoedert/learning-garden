@@ -1,0 +1,177 @@
+<html>
+  <head>
+    <title>Browser streaming POC</title>
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">        
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="library.js"></script>
+    <script src="recorder.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel = "stylesheet"
+        type = "text/css"
+        href = "styles.css" />
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "index.css" />
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=ENTER-KEY-HERE&libraries=places"></script> -->
+  </head>
+  <body>
+
+<!-- old shit -->
+
+<div class="row">
+  <section class="background">
+    <div class="content-wrapper">
+      <div class="container col-md-8 ">
+        <div class="img-responsive boundingBox mainImage" ></div>
+          <div class="overlayText centered">
+            <div class="splashTitle">
+              <p class="innerText">A<br>Global<br>Good<br>Morning</p>
+              <p class="splashText innerText">A good morning is anything you say to greet your day. It's the first greeting.</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4 top-right">
+        <img class="right-upper" src="assets/images/CraigD-Image-TopRight.jpg">
+        <div class="overlayNoBorder centered  d-flex flex-row">
+          <img id="leftArrow" class="left-arrow p-2" onclick="changeText(-1)" src='assets/images/top_white_arrow_left-24px.svg' >
+          <span class="paddingRightHI" id="slideTextHI"></span>
+          <p class="p-2 topRightText" id="slideText"></p>
+          <img id="rightArrow" class="right-arrow p-2" onclick="changeText(1)" src='assets/images/top_white_arrow_right-24px.svg' >
+        </div>
+        <!-- <div class="lowerBox half-height  d-flex flex-row"> -->
+            <div class="right-lower half-height  d-flex flex-row">
+          <p class="lowerPadding col-md-9">I want<br> to add<br> my own<br> personal<br> good <br>morning.</p>
+          <div class="col-md-3 circleText nextIcon">
+            <a href="#inputs" class="col-md-3"> 
+              <img class="icon nextIcon" src='assets/images/round-keyboard_arrow_right-24px.svg' >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="background">
+      <div class="content-wrapper">
+  <div class="row inputColumns" >
+    <a  name="inputs">
+      <div class="col-md-4 sectionHeight input-border">
+          <p class="step centerText">STEP</p>
+        <div class="circleText">
+            <p class="numberText centerText">1</p>
+        </div>
+        <p class="instructions centerText">Tell us where you are</p>
+        <img class="icon img-responsive" src='assets/images/round-language-24px.svg'>
+          <input id="autocomplete" class="input" placeholder="Enter your address"  type="text"/>
+        <p class="inputDescription centerText">This is your computer's current location.</p>
+      </div>
+      <div class="col-md-4 sectionHeight input-border ">
+          <p class="step centerText">STEP</p>
+          <div class="circleText">
+              <p class="numberText centerText">2</p>
+          </div>
+          <p class="instructions centerText">Tell us when you wake up</p>
+          <img class="icon img-responsive" src='assets/images/round-access_time-24px.svg'>
+          <input class="input"  type="time"id="appt-time" name="appt-time" required />
+          <span class="clockStyle" id="clock"></span>
+          <p class="inputDescription centerText">This is the current time.<br>Feel free to change it.</p>
+      </div>
+      <div class="col-md-4 sectionHeight">
+          <p class="step centerText">STEP</p>
+        <div class="circleText">
+            <p class="numberText centerText">3</p>
+        </div>
+        <p class="instructions centerText">Say good morning</p>
+          <p  class="instructions centerText mic-wrapper"> 
+            <i id="mic-icon" class="fas fa-microphone-alt fa-2x"></i> 
+          </p>
+ 
+          <ol id="recordingsList"></ol>
+
+
+        <canvas id="waveform"></canvas>
+          <p class="record-control centerText">
+              <i id="recordButton" class="far fa-dot-circle fa-3x"></i>
+                <i id="stopButton" class="far fa-stop-circle fa-3x"></i>
+                <img id="trashButton" class="icon" src='assets/images/round-delete-24px.svg'>
+              </span>
+          </p>
+      </div>
+    </a>
+  </div>
+</div>
+</section>
+<section class="background">
+    <div class="content-wrapper">
+      <div class="container col-md-12">
+      <img class="img-responsive boundingBox mainImage" src="assets/images/CraigD-image-email.jpg">
+      <div class="overlayNoBorder centered">
+              <div class="normalTitle">
+              <p>Thank You and Good Morning</p>
+              <p class="splashText">A good morning is anything you say<br>to greet your day. It's the first greeting.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+</section>
+<section class="background">
+  <div class="content-wrapper">
+      <div class="row">
+          <div class="col-md-6 about-section">
+            <span class="about centered p-2" id="about">
+              <p id="aboutTitle">
+                  About the Project
+              </p>
+              <p>Global Good Mornings is a project by Craig Damrauer. You can look at more of my work at <a href="https://assortedbitsofwisdom.com/">Assorted Bits of Wisdom</a>.</p>
+              <p>This project is an outgrowth of something I’ve been pondering for a while. I’m interested in whether I can make something that helps a viewer viscerally intuit the turning of the earth.</p>
+              <p>I think a really interesting way to do this is to through people. At every moment on earth someone is waking up and headed into the day ahead. If there’s a way to capture these voices there might be a way to allow us to feel the day’s progress as the earth turns.</p>
+              <p>It’s going to need multiple sets of voices from every timezone in the world. I’d love it to represent the young, the old and everybody in between. I’d love it to represent different languages, different points of view, different modes of waking up.</p>
+              <p>Drop a line, if you want to talk about this, have ideas or just want to be kept up to date with the progress.</p>
+              GlobalGoodMorning @ gmail.com
+            </span>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="background">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 about-section">
+              <span class="about centered p-2" id="about">
+                <p id="aboutTitle">
+                  Credits
+                </p>
+      <p>(this will evolve)</p>
+      <p>Site Design: Brian Carley</p>
+      <p>Programming: James Goedert</p>
+      <p>Antoine Claval</p>
+      <p>Photos: Unsplash.com</p>
+              </span>
+            </div>
+        </div>
+    </div>
+  </section>
+<!-- end of old shit -->
+</body>
+
+<footer>
+<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+  <script src="index.js"></script>
+  <script src="recorder.js"></script>
+  <script src="localRecorder.js"></script>
+  <script src="https://unpkg.com/oscilloscope@1.1.0/dist/oscilloscope.min.js"></script>
+  <script src="location.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCecMGSQoLocamtZ7X9qzaNULqa0yZ-p4E&libraries=places&callback=initAutocomplete"
+  async defer></script>
+
+<!--       <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.6/wavesurfer.min.js"></script>
+      <script src="player.js"></script> -->
+</footer>
+</html>

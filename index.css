@@ -1,0 +1,17 @@
+.image-box {
+    /* width: 100%; */
+    height: 50vh;
+    padding: 15%;
+    text-align: center;
+}
+p {
+    justify-content: center;
+    text-align: center;
+    font-size: 32px;
+}
+#choiceNav {
+    color: greenyellow;
+    font-family: Arial;
+    font-size: 48px;
+    padding-left: 2rem;
+}
