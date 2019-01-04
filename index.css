@@ -2,6 +2,11 @@
     /* width: 100%; */
     padding: 15%;
     text-align: center;
+    height: 50vh;
+    /* margin-left: 35%; */
+}
+
+.main-logo {
     height: 100vh;
     margin-left: 35%;
 }
